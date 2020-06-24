@@ -3,28 +3,28 @@ LovyanGFXライブラリをGUIsliceで使ったときに、カスタムフォン
 
 # ファイル説明
 ## [fontconvert/fontconvert.c](https://github.com/haoling/20200624_LovyanGFX_CustomFont/blob/master/fontconvert/fontconvert.c)
-半角カナに対応した、GFXFontの生成ツールです。
-半角カナは、 「｡」～「ｿ」までを 0xA1～0xBFに、「ﾀ」～「ﾟ」を0x80～0x9Fにマッピングしています。
+半角カナに対応した、GFXFontの生成ツールです。<br>
+半角カナは、 「｡」～「ｿ」までを 0xA1～0xBFに、「ﾀ」～「ﾟ」を0x80～0x9Fにマッピングしています。<br>
 上位側の7bit目 （01000000）が1になると表示できないみたいなので、空いているエリアにマッピングしました。
 
 ## [include/Fonts/JF-Dot-Shinonome125pt8b.h](https://github.com/haoling/20200624_LovyanGFX_CustomFont/blob/master/include/Fonts/JF-Dot-Shinonome125pt8b.h)
-上記fontconverterで変換した、半角カナ対応の東雲フォント（5pt）です。
+上記fontconverterで変換した、半角カナ対応の東雲フォント（5pt）です。<br>
 同じく JF-Dot-Shinonome128pt8b.h は8ptです。
 
 ## [lib/LovyanGFX_TFT_eSPI/src/TFT_eSPI.h](https://github.com/haoling/20200624_LovyanGFX_CustomFont/blob/master/lib/LovyanGFX_TFT_eSPI/src/TFT_eSPI.h)
-TFT_eSPIのフリをするLovyanGFXのインクルードファイル。
+TFT_eSPIのフリをするLovyanGFXのインクルードファイル。<br>
 ライブラリの中をいじりたくなかったので、ここに居る。
 
 ## [lib/LovyanGFX_TFT_eSPI/src/LGFX_TFT_eSPI.hpp](https://github.com/haoling/20200624_LovyanGFX_CustomFont/blob/master/lib/LovyanGFX_TFT_eSPI/src/LGFX_TFT_eSPI.hpp)
-我が家のESP32とTFT液晶（[ST7789](https://amzn.to/37WbnBz)）用のGPIOピンの定義などを書いたヘッダファイル。
+我が家のESP32とTFT液晶（[ST7789](https://amzn.to/37WbnBz)）用のGPIOピンの定義などを書いたヘッダファイル。<br>
 TFT_eSPI型はこのファイルで定義されている。
 
 ## [src/TftLogStream.cpp](https://github.com/haoling/20200624_LovyanGFX_CustomFont/blob/master/src/TftLogStream.cpp)
 TFTのpElemTextbox1とSerialに、同時にログを流すStreamクラス
 
 ## [src/UTF8toSJIS.cpp](https://github.com/haoling/20200624_LovyanGFX_CustomFont/blob/master/src/UTF8toSJIS.cpp)
-UTF-8の半角カナを、上記fontconverter用の、おかしなマッピングの半角カナのコードに変換する関数。
-これで変換した文字列を `gslc_ElemSetTxtStr` に渡すと（本来であれば）半角カナがTFTに表示される。
+UTF-8の半角カナを、上記fontconverter用の、おかしなマッピングの半角カナのコードに変換する関数。<br>
+これで変換した文字列を `gslc_ElemSetTxtStr` に渡すと（本来であれば）半角カナがTFTに表示される。<br>
 （このコードでは変換後の文字列をTftLogStreamに渡しているので、シリアルモニタの表示は化ける。）
 
 ## [src/LovyanGFX_FontTest.ino](https://github.com/haoling/20200624_LovyanGFX_CustomFont/blob/master/src/LovyanGFX_FontTest.ino)
@@ -32,7 +32,8 @@ mainコード
 
 # 状況説明
 ## 動画
-こうなります。microSDのスロットが見えますが、このコードでは使っていません。（別のGPIOにささっています。）
+こうなります。microSDのスロットが見えますが、このコードでは使っていません。<br>
+（別のGPIOにささっています。）<br>
 [![](https://img.youtube.com/vi/NbPKXDM_hGE/0.jpg)](https://www.youtube.com/watch?v=NbPKXDM_hGE)
 
 
