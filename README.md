@@ -33,7 +33,7 @@ mainコード
 # 状況説明
 ## 動画
 こうなります。microSDのスロットが見えますが、このコードでは使っていません。（別のGPIOにささっています。）
-<iframe width="1368" height="618" src="https://www.youtube.com/embed/NbPKXDM_hGE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![](https://img.youtube.com/vi/NbPKXDM_hGE/0.jpg)](https://www.youtube.com/watch?v=NbPKXDM_hGE)
 
 
 ## シリアルモニタ
